@@ -98,11 +98,16 @@ function procesarImagenes(file, outputSubDir) {
         .catch(() => {})
 }
 
+// ... (Todo el resto de tu código se queda exactamente igual)
+
 export function dev() {
     watch('src/scss/**/*.scss', css)
     watch('src/js/**/*.js', js)
     watch('src/img/**/*.{png,jpg,jpeg}', series(crop, imagenes))
 }
 
-// Flujo por defecto en consola
+// NUEVA TAREA: Para producción (Se ejecuta una vez y se cierra limpiamente)
+export const build = series( crop, js, css, imagenes );
+
+// Tarea por defecto para tu entorno local con el watcher activado
 export default series( crop, js, css, imagenes, dev )
