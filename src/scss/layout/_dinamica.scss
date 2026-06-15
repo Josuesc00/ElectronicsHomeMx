@@ -1,0 +1,102 @@
+@use 'sass:color';
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.dinamica {
+    background-color: v.$negro;
+    padding: 5rem 0; // Padding reducido para móvil
+
+    @include m.tablet {
+        padding: 10rem 0; // Se ajusta en tablet igual que conferencias
+    }
+
+    h3 {
+        color: v.$blanco;
+        text-align: center;
+        margin: 0 0 2rem 0;
+        text-transform: uppercase;
+        font-size: 3.5rem; // Tamaño base para móvil
+
+        @include m.tablet {
+            font-size: 6rem; // Tamaño de tus globales para pantallas grandes
+        }
+    }
+
+    .descripcion {
+        text-align: center;
+        color: v.$blanco;
+        font-size: 1.8rem;
+        margin-bottom: 4rem;
+        padding: 0 2rem;
+        font-weight: 300;
+
+        @include m.tablet {
+            font-size: 2.2rem;
+            margin-bottom: 5rem;
+        }
+    }
+}
+
+.dinamica-contenedor {
+    @include m.contenedor; // Mantiene la alineación con el header
+}
+
+.lista-marcas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr; // 1 columna en móvil para evitar amontonamiento
+    gap: 2rem;
+
+    @include m.tablet {
+        @include m.grid(2, 2rem); // 2 columnas en tablet
+    }
+
+    @include m.desktop {
+        @include m.grid(3, 3rem); // 3 columnas en desktop
+    }
+
+    li {
+        color: v.$blanco;
+        font-size: 2rem; // Un poco más grande para que resalte
+        text-align: center;
+        padding: 3rem; // Más espacio interno para que se vea premium
+        background-color: color.scale(v.$negro, $lightness: 8%); // Fondo sutil como las conferencias
+        border: 1px solid rgba(v.$blanco, 0.1); 
+        border-radius: 1rem;
+        transition: all .3s ease;
+        font-weight: 700;
+
+        &:hover {
+            border-color: v.$neon; // Acento neón al pasar el mouse
+            color: v.$neon;
+            cursor: pointer;
+            transform: translateY(-5px);
+            background-color: color.scale(v.$negro, $lightness: 12%);
+        }
+    }
+}
+
+// Estilo para el visualizador de stands (el que activas con JS)
+#info-stand {
+    @include m.contenedor;
+    margin-top: 4rem;
+    text-align: center;
+    padding: 2rem;
+    background-color: v.$neon;
+    color: v.$verdeOscuro;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    display: none; // Se activa mediante la clase .activo en JS
+
+    &.activo {
+        display: block;
+    }
+
+    strong {
+        text-transform: uppercase;
+        border-bottom: 2px solid v.$verdeOscuro;
+    }
+}

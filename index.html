@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="build/css/app.css">
+    <title>Electronics & Home Mexico</title> 
+    
+    <!-- 1. SOLUCIÓN AL ERROR DE FAVICON: Usa tu logotipo como icono de pestaña para eliminar el 404 -->
+    <link rel="icon" href="src/img/gallery/logo.avif" type="image/avif">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- 2. SOLUCIÓN A URLS ROTAS: Enlaces absolutos y correctos a Google Fonts y Leaflet CSS sin errores 404 -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com" />
+    
+    <!-- 3. OPTIMIZACIÓN LCP ALTERNATIVA: Usamos img1.jpg temporalmente para evitar el 404 mientras creas tu poster.webp -->
+    <link rel="preload" as="image" href="src/img/gallery/full/img1.avif" fetchpriority="high">
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor contenido-header">
+            <div class="logo">
+                <img src="src/img/gallery/logo.avif" alt="Logo Electronics & Home Mexico" width="150" height="50">
+            </div>
+            
+            <nav class="navegacion-principal" aria-label="Navegación principal">
+                <a href="#dinamica">Dinámicas</a>
+                <a href="#conferencias">Conferencias</a>
+                <a href="#Expositores">Expositores</a>
+            </nav>
+        </div>
+    </header>
+
+   <div class="video">
+    <div class="overlay">
+        <div class="contenedor contenido-video">
+            <h2>BIENVENIDO</h2>
+            <p>Electronics Home Mexico 2026</p>
+        </div>
+    </div>
+
+    <!-- 4. OPTIMIZACIÓN VIDEO MÓVIL: Enlazado a la imagen existente img1.jpg como poster provisional para eliminar el error 404 -->
+     <video autoplay muted loop playsinline  poster="src/img/gallery/full/img1.avif">
+        <source src="video/Electronics.webm" type="video/webm">
+        <source src="video/Electronics.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <section class="sobre-evento"> 
+        <div class="imagen">
+            <img loading="lazy" src="src/img/gallery/full/img1.avif" alt="Exposición del evento sobre electrónica" loading="lazy" width="600" height="400">
+        </div>
+        <div class="contenido-Evento">
+            <h2>¿Quienes Somos?</h2>
+            <p class="info">Lorem ipsum dolor sit amet consectetur 
+                adipisicing elit. Vitae quia unde laudantium, dicta voluptatem 
+                qui eum praesentium omnis exercitationem quas veniam corporis amet 
+                ut esse voluptatum quo pariatur sapiente hic Lorem ipsum dolor sit 
+                amet consectetur adipisicing elit. Magni rem dolorum corporis architecto,
+                 deserunt praesentium dolor eaque nam odio molestias soluta aliquam ea quia 
+                 numquam. Quod voluptas fugit voluptatibus ipsam?</p>
+        </div>
+    </section>
+
+  <section id="dinamica" class="dinamica">
+    <h3>DINAMICAS INTERACTIVAS</h3>
+    <p class="descripcion">¡Elige tu favorita y únete a la acción! </p>
+    <div class="dinamica-contenedor">
+        <ul class="lista-marcas" id="lista-marcas">
+            <li data-stand="A-101">Samsung</li>
+            <li data-stand="A-102">Sony</li>
+            <li data-stand="A-103">LG Electronics</li>
+            <li data-stand="B-201">Panasonic</li>
+            <li data-stand="B-202">Hisense</li>
+            <li data-stand="B-203">TCL</li>
+            <li data-stand="C-301">Apple</li>
+            <li data-stand="C-302">HP (Hewlett-Packard)</li>
+            <li data-stand="C-303">Dell</li>
+            <li data-stand="D-401">Lenovo</li>
+            <li data-stand="D-402">Asus</li>
+            <li data-stand="D-403">Xiaomi</li>
+            <li data-stand="E-501">Google Home</li>
+            <li data-stand="E-502">Amazon Alexa</li>
+            <li data-stand="E-503">Philips Hue</li>
+        </ul>
+    </div>
+</section>
+
+<section id="conferencias" class="conferencias">
+    <h3>Conferencias</h3>
+    <p class="descripcion">Aprende de los líderes de la industria tecnológica</p>
+
+    <div class="grid-conferencias">
+        <div class="card-conferencia">
+            <div class="horario">10:00 AM</div>
+            <div class="info-charla">
+                <h4>El Futuro del Smart Home</h4>
+                <p class="ponente">Ponente: Ing. Adrián Soler (Google)</p>
+                <p>Explora cómo la IA está transformando la automatización en hogares mexicanos.</p>
+                <button class="boton-registro" type="button">Reservar Lugar</button>
+            </div>
+        </div>
+
+        <div class="card-conferencia">
+            <div class="horario">12:30 PM</div>
+            <div class="info-charla">
+                <h4>Sustentabilidad en Electrónica</h4>
+                <p class="ponente">Ponente: Dra. Elena Ramos (LG)</p>
+                <p>Nuevos materiales y procesos de reciclaje en la fabricación de gadgets.</p>
+                <button class="boton-registro" type="button">Reservar Lugar</button>
+            </div>
+        </div>
+
+        <div class="card-conferencia">
+            <div class="horario">04:00 PM</div>
+            <div class="info-charla">
+                <h4>Gaming y Metaverso 2026</h4>
+                <p class="ponente">Ponente: Marcos Ruiz (Sony)</p>
+                <p>La evolución de las consolas y la realidad virtual en la próxima década.</p>
+                <button class="boton-registro" type="button">Reservar Lugar</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Expositores" class="expositores">
+    <h3>Expositores 2026</h3>
+    <p class="descripcion">Explora las marcas líderes que presentan el futuro del hogar.</p>
+
+    <div class="expositores-contenedor">
+        <ul class="lista-expositores">
+            <li>Samsung</li><li>Sony</li><li>LG Electronics</li><li>Panasonic</li>
+            <li>Hisense</li><li>TCL</li><li>Apple</li><li>HP</li>
+            <li>Dell</li><li>Lenovo</li><li>Asus</li><li>Xiaomi</li>
+            <li>Google Home</li><li>Amazon Alexa</li><li>Philips Hue</li><li>Microsoft</li>
+            <li>Nintendo</li><li>Sega</li><li>Intel</li><li>AMD</li>
+            <li>NVIDIA</li><li>Logitech</li><li>Razer</li><li>Corsair</li>
+            <li>Bose</li><li>Sonos</li><li>Sennheiser</li><li>JBL</li>
+            <li>GoPro</li><li>Canon</li><li>Nikon</li><li>DJI</li>
+            <li>Tesla Home</li><li>Ring</li><li>Nest</li><li>TP-Link</li>
+            <li>D-Link</li><li>Huawei</li><li>Motorola</li><li>Oppo</li>
+            <li>Garmin</li><li>Fitbit</li><li>Miele</li><li>Dyson</li>
+            <li>Whirlpool</li><li>KitchenAid</li><li>iRobot</li><li>Shark</li>
+            <li>Roku</li><li>Vizio</li>
+        </ul>
+    </div> 
+</section>
+
+<section class="croquis">
+    <div class="croquis-contenedor">
+        <h3 class="titulo-mapa">Mapa Interactivo</h3>
+        <div id="modal-mapa-interactivo" class="modal-mapa">
+            <button id="cerrar-mapa-interactivo" class="btn-cerrar" aria-label="Cerrar mapa interactivo">&times;</button>
+            
+            <div id="mapa-interactivo" class="mapa-diseño">
+                <img loading="lazy" src="src/img/gallery/full/mapa.avif" alt="Mapa de distribución de stands del evento" loading="lazy" width="800" height="500">
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p> © Electronics Home Mexico 2026. Todos los derechos reservados. </p>
+</footer>
+
+<!-- 5. SCRIPTS COMPLETO: Carga Leaflet JS de forma correcta e incluye tu app.js con defer -->
+<script src="https://unpkg.com"></script>
+<script src="build/js/app.js" defer></script>
+
+</body>
+</html>

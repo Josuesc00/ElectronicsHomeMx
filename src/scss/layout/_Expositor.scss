@@ -1,0 +1,143 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use "sass:color";
+
+.expositores {
+    background-color: v.$blanco; 
+    padding: 5rem 0;
+
+    @include m.tablet {
+        padding: 10rem 0;
+    }
+
+    h3 {
+        color: v.$verdeOscuro;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+
+        @include m.tablet {
+            font-size: 6rem;
+        }
+    }
+
+    .descripcion {
+        text-align: center;
+        color: v.$verdeOscuro;
+        font-size: 1.8rem;
+        margin-bottom: 5rem;
+        font-weight: 700;
+        opacity: 0.8;
+    }
+}
+
+.expositores-contenedor {
+    @include m.contenedor;
+}
+
+.lista-expositores {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem;
+
+    @include m.tablet {
+        @include m.grid(3, 1.5rem);
+    }
+
+    @include m.desktop {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem;
+    }
+
+    li {
+        background-color: color.adjust(v.$verdeOscuro, $lightness: 75%);
+        color: v.$verdeOscuro;
+        padding: 1.5rem;
+        text-align: center;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        border: 1px solid rgba(v.$verdeOscuro, 0.1);
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background-color: v.$neon;
+            color: v.$verdeOscuro;
+            border-color: v.$verdeOscuro;
+            transform: translateY(-3px);
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    }
+}
+
+// ESTILOS DEL MODAL MAPA INTERACTIVO (PERFECTAMENTE CUADRADO PARA LEAFLET)
+#modal-mapa-interactivo {
+    position: relative;
+    width: 100%;
+    height: 920px; 
+    background-color: #f0f0f0;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    cursor: zoom-in;
+    transition: background-color 0.3s ease-in-out; 
+    margin-top: 2rem;
+
+    &.modal-activo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        z-index: 99999;
+        cursor: default;
+
+        .btn-cerrar {
+            display: flex;
+        }
+    }
+
+    #mapa-interactivo {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden; // 🔥 CORRECCIÓN: Corta cualquier desbordamiento fantasma del contenedor
+
+        // 🔥 CONTROL ABSOLUTO DE IMAGEN: Evita que el CSS global de tu curso aplaste las dimensiones calculadas por JS
+        img {
+            max-width: none !important;
+            max-height: none !important; 
+        }
+    }
+
+    .btn-cerrar {
+        display: none;
+        position: absolute;
+        top: 20px;         
+        right: 20px;       
+        z-index: 100000;
+        width: 50px;
+        height: 50px;
+        background-color: v.$blanco;
+        color: v.$verdeOscuro;
+        font-size: 2.8rem;   
+        font-family: sans-serif;
+        border: none;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+
+        &:active {
+            background-color: color.adjust(v.$blanco, $lightness: -10%);
+            transform: scale(0.95);
+        }
+    }
+}
