@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="build/css/app.css">
+    <title>Electronics & Home Mexico</title>
+    <!-- Exclusivo en formato AVIF -->
+    <link rel="icon" href="build/img/gallery/logo.avif" type="image/avif">
+    <link rel="preload" as="image" href="build/img/gallery/full/img1.avif" fetchpriority="high" type="image/avif">
+</head>
+
+<body>
+    <header class="header">
+        <div class="contenedor contenido-header">
+
+            <div class="logo">
+                <!-- Carga directa en formato AVIF -->
+                <img loading="lazy" src="build/img/gallery/logo.avif" alt="Logo Electronics & Home Mexico" width="150" height="50">
+            </div>
+
+            <nav class="navegacion-principal" aria-label="Navegación principal">
+                <a href="#dinamica">Dinámicas</a>
+                <a href="#conferencias">Conferencias</a>
+                <a href="#Expositores">Expositores</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <div class="video">
+        <div class="overlay">
+            <div class="contenedor contenido-video">
+                <h2>BIENVENIDO</h2>
+                <p>Electronics Home Mexico 2026</p>
+            </div>
+        </div>
+        <video autoplay muted loop playsinline poster="build/img/gallery/full/img1.avif">
+            <source src="video/Electronics.webm" type="video/webm">
+            <source src="video/Electronics.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <section class="sobre-evento">
+        <div class="imagen">
+            <!-- Carga directa en formato AVIF -->
+            <img loading="lazy" src="build/img/gallery/full/img1.avif" alt="Exposición del evento sobre electrónica" width="600" height="400">
+        </div>
+
+        <div class="contenido-Evento">
+            <h2>¿Quiénes Somos?</h2>
+            <p class="info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Vitae quia unde laudantium, dicta voluptatem qui eum
+                praesentium omnis exercitationem quas veniam corporis amet
+                ut esse voluptatum quo pariatur sapiente hic.
+            </p>
+        </div>
+    </section>
+
+    <section id="dinamica" class="dinamica">
+        <h3>DINÁMICAS INTERACTIVAS</h3>
+        <p class="descripcion">¡Elige tu favorita y únete a la acción!</p>
+        <div class="dinamica-contenedor">
+            <ul class="lista-marcas" id="lista-marcas">
+                <li data-stand="A-101">Samsung</li>
+                <li data-stand="A-102">Sony</li>
+                <li data-stand="A-103">LG Electronics</li>
+                <li data-stand="B-201">Panasonic</li>
+                <li data-stand="B-202">Hisense</li>
+                <li data-stand="B-203">TCL</li>
+                <li data-stand="C-301">Apple</li>
+                <li data-stand="C-302">HP (Hewlett-Packard)</li>
+                <li data-stand="C-303">Dell</li>
+                <li data-stand="D-401">Lenovo</li>
+                <li data-stand="D-402">Asus</li>
+                <li data-stand="D-403">Xiaomi</li>
+                <li data-stand="E-501">Google Home</li>
+                <li data-stand="E-502">Amazon Alexa</li>
+                <li data-stand="E-503">Philips Hue</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="conferencias" class="conferencias">
+        <h3>Conferencias</h3>
+        <p class="descripcion">
+            Aprende de los líderes de la industria tecnológica
+        </p>
+        <div class="grid-conferencias">
+            <div class="card-conferencia">
+                <div class="horario">10:00 AM</div>
+                <div class="info-charla">
+                    <h4>El Futuro del Smart Home</h4>
+                    <p class="ponente">Ponente: Ing. Adrián Soler (Google)</p>
+                    <p>
+                        Explora cómo la IA está transformando la automatización
+                        en hogares mexicanos.
+                    </p>
+                    <button class="boton-registro" type="button">
+                        Reservar Lugar
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-conferencia">
+                <div class="horario">12:30 PM</div>
+
+                <div class="info-charla">
+                    <h4>Sustentabilidad en Electrónica</h4>
+                    <p class="ponente">Ponente: Dra. Elena Ramos (LG)</p>
+                    <p>
+                        Nuevos materiales y procesos de reciclaje en la
+                        fabricación de gadgets.
+                    </p>
+                    <button class="boton-registro" type="button">
+                        Reservar Lugar
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-conferencia">
+                <div class="horario">04:00 PM</div>
+
+                <div class="info-charla">
+                    <h4>Gaming y Metaverso 2026</h4>
+                    <p class="ponente">Ponente: Marcos Ruiz (Sony)</p>
+                    <p>
+                        La evolución de las consolas y la realidad virtual
+                        en la próxima década.
+                    </p>
+                    <button class="boton-registro" type="button">
+                        Reservar Lugar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="croquis">
+        <div class="croquis-contenedor">
+            <h3 class="titulo-mapa">Mapa Interactivo</h3>
+            <div id="modal-mapa-interactivo" class="modal-mapa">
+                <button
+                    id="cerrar-mapa-interactivo"
+                    class="btn-cerrar"
+                    aria-label="Cerrar mapa interactivo">
+                    &times;
+                </button>
+
+                <div id="mapa-interactivo" class="mapa-diseño">
+                    <!-- Carga directa en formato AVIF -->
+                    <img loading="lazy" src="build/img/gallery/full/mapa.avif" alt="Mapa de distribución de stands del evento" width="800" height="500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© Electronics Home Mexico 2026. Todos los derechos reservados.</p>
+    </footer>
+    <script src="build/js/app.js" defer></script>
+</body>
+</html>
