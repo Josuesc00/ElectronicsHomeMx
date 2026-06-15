@@ -44,7 +44,7 @@ export async function crop(done) {
         fs.mkdirSync(outputFolder, { recursive: true })
     }
     
-    // Soporte para jpg, jpeg y png en el recorte
+    // CORREGIDO: Filtro insensible a mayúsculas para Linux (Netlify)
     const images = fs.readdirSync(inputFolder).filter(file => {
         return /\.(jpg|jpeg|png)$/i.test(path.extname(file));
     });
@@ -71,7 +71,9 @@ export async function crop(done) {
 export async function imagenes(done) {
     const srcDir = './src/img';
     const buildDir = './build/img';
-    const images = await glob('./src/img/**/*.{jpg,jpeg,png}')
+    
+    // CORREGIDO: Se añade nocase: true para encontrar archivos .JPG o .PNG en Netlify
+    const images = await glob('./src/img/**/*.{jpg,jpeg,png}', { nocase: true })
 
     images.forEach(file => {
         const relativePath = path.relative(srcDir, path.dirname(file));
@@ -98,16 +100,14 @@ function procesarImagenes(file, outputSubDir) {
         .catch(() => {})
 }
 
-// ... (Todo el resto de tu código se queda exactamente igual)
-
 export function dev() {
     watch('src/scss/**/*.scss', css)
     watch('src/js/**/*.js', js)
     watch('src/img/**/*.{png,jpg,jpeg}', series(crop, imagenes))
 }
 
-// NUEVA TAREA: Para producción (Se ejecuta una vez y se cierra limpiamente)
+// TAREA DE PRODUCCIÓN: Se ejecuta una vez y se cierra limpiamente en Netlify
 export const build = series( crop, js, css, imagenes );
 
-// Tarea por defecto para tu entorno local con el watcher activado
+// TAREA POR DEFECTO: Para tu entorno local con el watch activo
 export default series( crop, js, css, imagenes, dev )
